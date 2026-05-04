@@ -37,7 +37,7 @@ const serviceCards = [
       desc: "Integrate intelligent technology with our IoT solutions to enhance operational efficiency...",
       items: [
         "BankLnd",
-        "SmartDSACRM",
+        "BharatKADSA",
         "GymCloudSuite",
         "Greenybook.com",
         "ZeroTicket.com",

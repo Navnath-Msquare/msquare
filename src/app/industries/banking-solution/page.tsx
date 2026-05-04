@@ -31,7 +31,7 @@ export default function BankingSolutionPage() {
       title="Industries We Serve"
       subtitle="Discover Our Specialized Software Solutions Across Banking, Fitness, Advertising, and More"
       contentHeading="Industries We Impact"
-      description="Through BankLnD.com and SmartDSACRM.com, we serve co-operative banks, Nidhi banks, and microfinance institutions (MFIs), offering tailored solutions that improve operational efficiency and compliance."
+      description="Through BankLnD.com and BharatKADSA.com, we serve co-operative banks, Nidhi banks, and microfinance institutions (MFIs), offering tailored solutions that improve operational efficiency and compliance."
       concludingText="MSquare Software is committed to enabling banking institutions to achieve seamless operational efficiency, compliance, and workforce excellence with BankLnD."
       features={features}
       bgImage="/Images/banking-solution.jpg"

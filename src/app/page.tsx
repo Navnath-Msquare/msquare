@@ -7,46 +7,52 @@ import { motion, useInView, Variants } from "framer-motion";
 
 const baseProducts = [
   {
-    id: "p1",
+    id: "01",
     img: "/bank1.png",
     name: "BankLnD",
     desc: "Learning and Development for the Banking Domain",
     href: "https://banklnd.com/home",
     cta: "Visit BankLnD",
+    color: "#4F46E5", // Indigo
   },
   {
-    id: "p2",
-    img: "/smart1.png",
-    name: "BharatDSACRM",
-    desc: "CRM for Direct Selling Agents",
-    href: "https://smartdsacrm.com/",
-    cta: "Visit SmartDSACRM",
+    id: "02",
+    img: "/bharat.png",
+    name: "BharatKADSA",
+    desc: "Direct Selling Agents Management System",
+    href: "https://bharatkadsa.com/",
+    cta: "Visit BharatKADSA",
+    color: "#EF4444", // Red
   },
   {
-    id: "p3",
+    id: "03",
     img: "/gym1.png",
     name: "GymCloudSuite",
     desc: "Fitness Management Platform",
     href: "https://gymcloudsuite.com/",
     cta: "Visit GymCloudSuite",
+    color: "#10B981", // Emerald/Green
   },
   {
-    id: "p4",
+    id: "04",
     img: "/zero-tecket.png",
     name: "ZeroTicket",
     desc: "Ticket & Project Management Platform",
     href: "https://zero-ticket.com/",
     cta: "Visit ZeroTicket",
+    color: "#F59E0B", // Amber/Orange
   },
   {
-    id: "p5",
+    id: "05",
     img: "/school1.png",
     name: "AutomateMySchool",
     desc: "Simplify Preprimary School Operation",
     href: "https://automatemyschool.com/",
     cta: "Visit AutomateMySchool",
+    color: "#8B5CF6", // Violet/Purple
   },
 ];
+
 const slides = [
   {
     bg: "/Images/home-startup-slider-bg-01.jpg",
@@ -114,10 +120,6 @@ const staggerContainer: Variants = {
 export default function HomePage() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [mobileIdx, setMobileIdx] = useState(0);
-  const trackRef = useRef<HTMLDivElement>(null);
-
-  // Create a triple-length array for seamless infinite manual scrolling
-  const infiniteProducts = [...baseProducts, ...baseProducts, ...baseProducts];
 
   // Auto Slider for Hero
   useEffect(() => {
@@ -135,47 +137,6 @@ export default function HomePage() {
       3000,
     );
     return () => clearInterval(t);
-  }, []);
-
-  // Initialize scroll position to the middle array to allow infinite left/right
-  useEffect(() => {
-    if (trackRef.current) {
-      // 340 width + 32 gap = 372px per item
-      const itemWidth = 372;
-      const startPos = baseProducts.length * itemWidth;
-      trackRef.current.scrollLeft = startPos;
-    }
-  }, []);
-
-  const slideProducts = (dir: "next" | "prev") => {
-    if (trackRef.current) {
-      const itemWidth = 340 + 32; // width + gap
-      const currentScroll = trackRef.current.scrollLeft;
-      const targetScroll =
-        dir === "next" ? currentScroll + itemWidth : currentScroll - itemWidth;
-
-      trackRef.current.scrollTo({ left: targetScroll, behavior: "smooth" });
-
-      // Silently reset if we reach the padded edges
-      setTimeout(() => {
-        if (!trackRef.current) return;
-        const middleStart = baseProducts.length * itemWidth;
-        const middleEnd = baseProducts.length * 2 * itemWidth;
-
-        if (trackRef.current.scrollLeft <= itemWidth) {
-          trackRef.current.scrollLeft += middleStart;
-        } else if (trackRef.current.scrollLeft >= middleEnd) {
-          trackRef.current.scrollLeft -= middleStart;
-        }
-      }, 500); // adjust slightly longer than smooth scroll duration
-    }
-  };
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      slideProducts("next");
-    }, 3500);
-    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -264,97 +225,113 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Our Products ── */}
-      <section className="w-full py-24 bg-[#fafafa] relative overflow-hidden">
-        {/* Decorative background accents */}
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-orange-300/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3"></div>
-
-        <div className="container mx-auto px-4 max-w-7xl relative z-10">
+      {/* ── Our Products (Multi-Color Redesign) ── */}
+      <section className="w-full py-24 bg-[#f8f9fc] relative overflow-hidden">
+        <div className="container mx-auto px-6 max-w-[1400px] relative z-10">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeUp}
-            className="flex justify-between items-end mb-12"
+            className="flex flex-col md:flex-row justify-between items-center mb-16 gap-6"
           >
-            <div>
-              <div className="flex items-center gap-3 mb-2">
-                <div className="w-10 h-1 bg-[#FF9933] rounded-full"></div>
-                <p className="text-[#FF9933] font-bold tracking-widest uppercase text-sm">
-                  Portfolio
+            <div className="text-center md:text-left">
+              <div className="flex items-center gap-3 mb-4 justify-center md:justify-start">
+                <div className="w-16 h-2 bg-gradient-to-r from-gray-400 to-gray-600 rounded-full"></div>
+                <p className="text-gray-500 font-black tracking-[0.4em] uppercase text-xs">
+                  Innovation Showcase
                 </p>
               </div>
-              <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">
-                Our Products
+              <h2 className="text-5xl md:text-7xl font-black text-gray-900 tracking-tighter leading-none">
+                Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-blue-600 to-purple-600">Products</span>
               </h2>
-            </div>
-            <div className="hidden md:flex gap-4">
-              <button
-                onClick={() => slideProducts("prev")}
-                className="w-[50px] h-[50px] rounded-full bg-white shadow-lg text-gray-700 flex items-center justify-center hover:bg-[#FF9933] hover:text-white transition-colors border border-gray-100"
-                aria-label="Previous"
-              >
-                <i className="fa-solid fa-arrow-left"></i>
-              </button>
-              <button
-                onClick={() => slideProducts("next")}
-                className="w-[50px] h-[50px] rounded-full bg-[#FF9933] shadow-lg shadow-orange-500/30 text-white flex items-center justify-center hover:bg-[#ff881a] transition-colors"
-                aria-label="Next"
-              >
-                <i className="fa-solid fa-arrow-right"></i>
-              </button>
             </div>
           </motion.div>
 
-          <div className="overflow-hidden p-4 -m-4">
-            <div
-              ref={trackRef}
-              className="flex gap-8 overflow-x-hidden pb-8"
-              style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-            >
-              {infiniteProducts.map((p, i) => (
-                <div
-                  key={`${p.id}-${i}`}
-                  className="flex-none w-[340px] bg-white rounded-3xl p-6 shadow-xl border border-gray-100/50 flex flex-col justify-between group overflow-hidden relative"
-                  style={{ boxShadow: "0 20px 40px -15px rgba(0,0,0,0.05)" }}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            {baseProducts.map((p, i) => (
+              <motion.div
+                key={p.id}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeUp}
+                className="group relative flex flex-col rounded-[3rem] overflow-hidden bg-white border-2 transition-all duration-700 hover:-translate-y-4 shadow-xl"
+                style={{
+                   borderColor: `${p.color}15`,
+                   // Dynamic Shadow based on product color
+                   boxShadow: `0 30px 60px -15px ${p.color}25`,
+                }}
+                // Hover Shadow using pseudo-classes isn't easy with inline styles, 
+                // so we use a CSS variable or just a very strong base shadow.
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.boxShadow = `0 50px 100px -20px ${p.color}45`;
+                  e.currentTarget.style.borderColor = p.color;
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.boxShadow = `0 30px 60px -15px ${p.color}25`;
+                  e.currentTarget.style.borderColor = `${p.color}15`;
+                }}
+              >
+                {/* 1. Image Section (Dynamic Background Color) */}
+                <div 
+                  className="relative h-48 overflow-hidden transition-colors duration-700"
+                  style={{ backgroundColor: `${p.color}10` }}
                 >
-                  {/* Subtle Gradient Hover */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-orange-50 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl z-0" />
+                   <div className="relative w-full h-full transition-transform duration-1000 group-hover:scale-105">
+                     <Image
+                       src={p.img}
+                       alt={p.name}
+                       fill
+                       className="object-cover"
+                     />
+                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-40 group-hover:opacity-10 transition-opacity" />
+                   </div>
+                </div>
 
-                  <div className="relative z-10">
-                    <div className="mb-6 overflow-hidden rounded-2xl bg-gray-50 aspect-video relative shadow-inner">
-                      <Image
-                        src={p.img}
-                        alt={p.name}
-                        fill
-                        className="object-cover transition-transform duration-700 group-hover:scale-110"
-                      />
-                    </div>
-                    <h4 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-[#FF9933] transition-colors">
-                      {p.name}
-                    </h4>
-                    <p className="text-gray-500 text-sm mb-6 leading-relaxed line-clamp-3">
-                      {p.desc}
-                    </p>
-                  </div>
+                {/* 2. Content Section */}
+                <div className="p-8 flex flex-col flex-grow bg-white">
+                  <h3 
+                    className="text-2xl font-black text-gray-900 mb-3 transition-colors tracking-tight"
+                    style={{ color: '#111827' }} // Default dark
+                  >
+                    {p.name}
+                  </h3>
+                  <p className="text-gray-500 text-sm font-medium mb-8 leading-relaxed line-clamp-2">
+                    {p.desc}
+                  </p>
 
-                  <div className="relative z-10 pt-4 border-t border-gray-100">
+                  <div className="mt-auto pt-6 border-t border-gray-50 flex items-center justify-between">
                     <Link
                       href={p.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-between text-[#FF9933] font-bold text-sm group/btn hover:text-[#e68a2e] transition-colors"
+                      className="font-black text-xs uppercase tracking-[0.2em] flex items-center gap-3 group/btn"
+                      style={{ color: p.color }}
                     >
                       <span>{p.cta}</span>
-
-                      <div className="w-8 h-8 rounded-full bg-orange-50 flex items-center justify-center group-hover/btn:bg-[#FF9933] group-hover/btn:text-white transition-colors">
-                        <i className="fa-solid fa-arrow-right -rotate-45 group-hover/btn:rotate-0 transition-transform duration-300"></i>
+                      <div 
+                        className="w-9 h-9 rounded-xl flex items-center justify-center transition-all transform group-hover/btn:scale-110"
+                        style={{ 
+                          backgroundColor: `${p.color}15`,
+                          color: p.color 
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.backgroundColor = p.color;
+                          e.currentTarget.style.color = '#fff';
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.backgroundColor = `${p.color}15`;
+                          e.currentTarget.style.color = p.color;
+                        }}
+                      >
+                         <i className="fa-solid fa-arrow-right -rotate-45 group-hover/btn:rotate-0 transition-transform duration-500"></i>
                       </div>
                     </Link>
                   </div>
                 </div>
-              ))}
-            </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
@@ -433,7 +410,6 @@ export default function HomePage() {
       {/* ── Mobile Experience ── */}
       <section className="bg-[#0b0f19] py-32 relative overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[1000px] h-[600px] bg-gradient-to-tr from-[#FF9933]/10 via-purple-600/10 to-transparent rounded-full blur-[120px] pointer-events-none"></div>
-        {/* Subtle grid pattern background */}
         <div className="absolute inset-0 bg-[url('https://transparenttextures.com/patterns/cubes.png')] opacity-5 pointer-events-none"></div>
 
         <div className="container mx-auto px-4 max-w-7xl relative z-10">
@@ -498,7 +474,6 @@ export default function HomePage() {
 
             <div className="lg:col-span-7 flex justify-center lg:justify-end relative order-1 lg:order-2">
               <div className="relative w-[320px] h-[650px] flex items-center justify-center">
-                {/* Decorative glowing backplate behind phone */}
                 <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent rounded-[3rem] transform rotate-3 scale-105 z-0 blur-sm"></div>
 
                 <motion.div
@@ -520,7 +495,6 @@ export default function HomePage() {
                       fill
                       className="object-cover"
                     />
-                    {/* Simulated phone notch */}
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-7 bg-black rounded-b-[1rem]"></div>
                   </div>
                 </motion.div>
@@ -530,7 +504,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Client Logos ── */}
+      {/* ── Trusted by Companies (Static Grid Redesign) ── */}
       <section className="py-24 bg-white overflow-hidden">
         <div className="container mx-auto px-4 max-w-7xl">
           <motion.div
@@ -545,37 +519,39 @@ export default function HomePage() {
               <span className="w-12 h-px bg-gray-300"></span>
             </h4>
           </motion.div>
-        </div>
 
-        {/* Infinite CSS Marquee Wrapper */}
-        <div className="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
-          <div className="flex animate-marquee gap-14 items-center">
-            {/* Duplicate array mapping for seamless infinite loop */}
-            {[...clients, ...clients].map((c, i) => (
-              <div
+          <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+            className="flex flex-wrap justify-center items-center gap-10 md:gap-14 lg:gap-20"
+          >
+            {clients.map((c, i) => (
+              <motion.div
                 key={i}
-                className="flex items-center justify-center flex-shrink-0 group cursor-pointer filter grayscale hover:grayscale-0 hover:scale-110 transition-all duration-300 px-6 py-4 rounded-xl hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] bg-white"
-                style={c.bg && c.src.includes("pralekh") ? {} : {}}
+                variants={fadeUp}
+                className="flex items-center justify-center group cursor-pointer hover:scale-110 transition-all duration-300 px-6 py-4 rounded-xl bg-white"
               >
                 <div
-                  className="relative"
+                  className="relative transition-all duration-300"
                   style={{
                     backgroundColor: c.bg || "transparent",
-                    padding: c.bg ? "10px 15px" : "0",
-                    borderRadius: "8px",
+                    padding: c.bg ? "15px 20px" : "0",
+                    borderRadius: "12px",
                   }}
                 >
                   <Image
                     src={c.src}
                     alt={c.alt}
-                    width={160}
-                    height={80}
-                    className="w-auto h-12 md:h-16 object-contain"
+                    width={180}
+                    height={90}
+                    className="w-auto h-14 md:h-20 lg:h-24 object-contain"
                   />
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
     </>
