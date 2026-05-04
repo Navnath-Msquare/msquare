@@ -19,6 +19,18 @@ export default function ContactUI() {
       
       {/* ── Hero Section ── */}
       <section className="relative pt-32 pb-48 bg-[#0b0f19] overflow-hidden">
+                {/* Background Image with Premium Overlay */}
+        <div className="absolute inset-0 z-0">
+          <Image 
+            src="/Images/contact_hero_bg.png" 
+            alt="Extraordinary Tech Background" 
+            fill 
+            className="object-cover opacity-50"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0b0f19] via-[#0b0f19]/80 to-[#0b0f19]" />
+        </div>
+
         {/* Decorative Grid and Glow */}
         <div className="absolute inset-0 bg-[url('https://transparenttextures.com/patterns/cubes.png')] opacity-10 pointer-events-none"></div>
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#FF9933]/15 rounded-full blur-[150px] -translate-y-1/2 translate-x-1/3"></div>
@@ -59,12 +71,21 @@ export default function ContactUI() {
                 <i className="fa-solid fa-location-dot"></i>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Headquarters</h3>
-              <p className="text-gray-600 leading-relaxed font-medium">
+              <p className="text-gray-600 leading-relaxed font-medium mb-6">
                 B416, 4th Floor, Gera Imperium Gateway<br/>
                 Nashik Phata Metro Station,<br/>
                 Pimpri-Chinchwad, Pune<br/>
                 Maharashtra 411034, India
               </p>
+              <a 
+                href="https://www.google.com/maps/search/?api=1&query=Gera+Imperium+Gateway+Nashik+Phata" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-orange-50 text-[#FF9933] font-bold text-sm hover:bg-[#FF9933] hover:text-white transition-all border border-[#FF9933]/10"
+              >
+                <i className="fa-solid fa-map-location-dot"></i> View Map
+              </a>
+
             </motion.div>
 
             {/* Card 2: Phone */}

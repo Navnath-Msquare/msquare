@@ -8,7 +8,7 @@ import { motion, useInView, Variants } from "framer-motion";
 const baseProducts = [
   {
     id: "p1",
-    img: "/Images/banklnd.png",
+    img: "/bank1.png",
     name: "BankLnD",
     desc: "Learning and Development for the Banking Domain",
     href: "https://banklnd.com/home",
@@ -16,15 +16,15 @@ const baseProducts = [
   },
   {
     id: "p2",
-    img: "/Images/smartdsa.jpg",
-    name: "SmartDSACRM",
+    img: "/smart1.png",
+    name: "BharatDSACRM",
     desc: "CRM for Direct Selling Agents",
     href: "https://smartdsacrm.com/",
     cta: "Visit SmartDSACRM",
   },
   {
     id: "p3",
-    img: "/Images/gymcloudesuit.png",
+    img: "/gym1.png",
     name: "GymCloudSuite",
     desc: "Fitness Management Platform",
     href: "https://gymcloudsuite.com/",
@@ -32,7 +32,7 @@ const baseProducts = [
   },
   {
     id: "p4",
-    img: "/Images/zeroticket.jpg",
+    img: "/zero-tecket.png",
     name: "ZeroTicket",
     desc: "Ticket & Project Management Platform",
     href: "https://zero-ticket.com/",
@@ -40,7 +40,7 @@ const baseProducts = [
   },
   {
     id: "p5",
-    img: "/Images/automatemyschool.jpg",
+    img: "/school1.png",
     name: "AutomateMySchool",
     desc: "Simplify Preprimary School Operation",
     href: "https://automatemyschool.com/",

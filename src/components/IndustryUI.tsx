@@ -2,6 +2,7 @@
 
 import { motion, Variants } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 
 type Feature = {
   title: string;
@@ -11,8 +12,12 @@ type Feature = {
 type IndustryUIProps = {
   title: string;
   subtitle: string;
+  description?: string;
+  contentHeading?: string;
+  concludingText?: string; // New optional prop for concluding statement
   features: Feature[];
   bgImage: string;
+  contentImage?: string;
 };
 
 const fadeUp: Variants = {
@@ -25,7 +30,7 @@ const staggerContainer: Variants = {
   visible: { opacity: 1, transition: { staggerChildren: 0.1 } }
 };
 
-export default function IndustryUI({ title, subtitle, features, bgImage }: IndustryUIProps) {
+export default function IndustryUI({ title, subtitle, description, contentHeading, concludingText, features, bgImage, contentImage }: IndustryUIProps) {
   return (
     <div className="bg-white min-h-screen">
       {/* ── Animated Hero Section ── */}
@@ -52,16 +57,63 @@ export default function IndustryUI({ title, subtitle, features, bgImage }: Indus
             <motion.h1 variants={fadeUp} className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight leading-tight">
               {title}
             </motion.h1>
-            <motion.p variants={fadeUp} className="text-xl text-gray-300 leading-relaxed max-w-xl">
+            <motion.p variants={fadeUp} className="text-xl text-gray-300 leading-relaxed max-w-xl mb-4">
               {subtitle}
             </motion.p>
           </motion.div>
         </div>
       </section>
 
+      {/* ── Solution Overview Section ── */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-6 max-w-7xl">
+          <div className="flex flex-col lg:flex-row items-center gap-16">
+            <motion.div 
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="lg:w-1/2"
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                {contentHeading || "Expert Solutions for Your Industry"}
+              </h2>
+              <p className="text-lg text-gray-600 leading-relaxed mb-6">
+                {description}
+              </p>
+              {concludingText && (
+                <p className="text-lg text-gray-700 font-medium border-l-4 border-[#FF9933] pl-6 italic">
+                  {concludingText}
+                </p>
+              )}
+            </motion.div>
+            
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="lg:w-1/2 relative"
+            >
+              <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl border-8 border-white group">
+                <Image 
+                  src={contentImage || bgImage} 
+                  alt={title} 
+                  width={800} 
+                  height={600} 
+                  className="w-full h-auto transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              </div>
+              <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-orange-100 rounded-full -z-10 animate-pulse"></div>
+              <div className="absolute -top-6 -left-6 w-24 h-24 bg-blue-50 rounded-full -z-10"></div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* ── Capabilities/Features Bento Grid ── */}
       <section className="py-24 bg-gray-50 relative">
-        {/* Decorative Grid Lines */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
 
         <div className="container mx-auto px-6 relative z-10">
@@ -89,7 +141,6 @@ export default function IndustryUI({ title, subtitle, features, bgImage }: Indus
                 variants={fadeUp}
                 className="group relative bg-white p-10 rounded-[2rem] border border-gray-100 shadow-sm hover:shadow-2xl hover:border-transparent transition-all duration-300 overflow-hidden"
               >
-                {/* Hover Gradient Effect */}
                 <div className="absolute inset-0 bg-gradient-to-br from-orange-50 via-white to-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
                 
                 <div className="relative z-10">
@@ -115,7 +166,6 @@ export default function IndustryUI({ title, subtitle, features, bgImage }: Indus
               transition={{ duration: 0.8 }}
               className="bg-gray-900 rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden"
             >
-               {/* Ambient Glows */}
                <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#FF9933]/20 rounded-full blur-[100px] transform translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
                <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-500/20 rounded-full blur-[80px] transform -translate-x-1/2 translate-y-1/2 pointer-events-none"></div>
 

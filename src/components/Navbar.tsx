@@ -8,7 +8,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const productLinks = [
   { label: 'BankLnd', href: '/products/banklnd' },
-  { label: 'SmartDSACRM', href: '/products/smartdsacrm' },
+  { label: 'BharatDSACRM', href: '/products/smartdsacrm' },
   { label: 'GymCloudSuite', href: '/products/gymcloudsuite' },
   { label: 'Greenybook', href: '/products/greenybook' },
   { label: 'ZeroTicket', href: '/products/zeroticket' },
@@ -138,18 +138,21 @@ export default function Navbar() {
                   >
                     {sec.label} 
                     <motion.i 
-                      animate={{ rotate: openDropdown === sec.key ? 180 : 0 }} 
+                      animate={{ rotate: openDropdown === sec.key ? 180 : 0 }}
                       className="fa-solid fa-chevron-down text-[10px]"
                     />
                   </button>
+                  
                   <AnimatePresence>
                     {openDropdown === sec.key && dropdownMenu(sec.items)}
                   </AnimatePresence>
                 </div>
               );
             })}
-
-            <Link href="/contact" className={getLinkClass(isActive('/contact'))}>Contact Us</Link>
+            
+            <Link href="/contact" className="ml-4 px-6 py-2.5 bg-gray-900 text-white rounded-full font-bold text-sm hover:bg-[#FF9933] transition-all">
+              Contact Us
+            </Link>
           </div>
 
           {/* Mobile Toggle */}
@@ -158,56 +161,55 @@ export default function Navbar() {
             onClick={() => setIsOpen(!isOpen)}
           >
             <motion.i 
-              initial={false}
               animate={{ rotate: isOpen ? 90 : 0 }}
               className={`fa-solid ${isOpen ? 'fa-xmark' : 'fa-bars'} text-xl`}
             />
           </button>
         </div>
-
-        {/* Mobile Menu */}
-        <AnimatePresence>
-          {isOpen && (
-            <motion.div 
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              className="lg:hidden bg-white border-t border-gray-100 overflow-hidden"
-            >
-              <div className="px-4 py-5 space-y-2 max-h-[80vh] overflow-y-auto">
-                <Link href="/" onClick={() => setIsOpen(false)} className={`block rounded-lg px-4 ${getLinkClass(isActive('/'))}`}>Home</Link>
-                <Link href="/services" onClick={() => setIsOpen(false)} className={`block rounded-lg px-4 ${getLinkClass(isActive('/services'))}`}>Service</Link>
-
-                {[
-                  { key: 'products', label: 'Products', items: productLinks },
-                  { key: 'company', label: 'Company', items: companyLinks },
-                  { key: 'industries', label: 'Industries We Serve', items: industryLinks },
-                ].map(sec => (
-                  <div key={sec.key} className="relative">
-                    <button onClick={() => toggle(sec.key)}
-                      className="flex items-center justify-between w-full px-4 py-2.5 text-sm font-medium text-gray-700 rounded-lg hover:bg-gray-50 transition-colors">
-                      {sec.label} 
-                      <motion.i 
-                        animate={{ rotate: openDropdown === sec.key ? 180 : 0 }}
-                        className="fa-solid fa-chevron-down text-xs"
-                      />
-                    </button>
-                    <AnimatePresence>
-                      {openDropdown === sec.key && dropdownMenu(sec.items, true)}
-                    </AnimatePresence>
-                  </div>
-                ))}
-                <div className="pt-2">
-                  <Link href="/contact" onClick={() => setIsOpen(false)} 
-                    className="block w-full text-center bg-[#FF9933] text-white rounded-full py-3 text-sm font-semibold hover:bg-[#e68a2e] transition-colors shadow-md">
-                    Contact Us
-                  </Link>
-                </div>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
       </nav>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            className="lg:hidden bg-white border-t border-gray-100 overflow-hidden"
+          >
+            <div className="container mx-auto px-4 py-6 flex flex-col gap-2">
+              <Link href="/" className="px-4 py-3 text-base font-semibold text-gray-900 hover:bg-orange-50 rounded-lg" onClick={() => setIsOpen(false)}>Home</Link>
+              <Link href="/services" className="px-4 py-3 text-base font-semibold text-gray-900 hover:bg-orange-50 rounded-lg" onClick={() => setIsOpen(false)}>Service</Link>
+
+              {[
+                { key: 'products', label: 'Products', items: productLinks },
+                { key: 'company', label: 'Company', items: companyLinks },
+                { key: 'industries', label: 'Industries We Serve', items: industryLinks },
+              ].map(sec => (
+                <div key={sec.key} className="flex flex-col">
+                  <button 
+                    onClick={() => toggle(sec.key)}
+                    className="flex items-center justify-between px-4 py-3 text-base font-semibold text-gray-900 hover:bg-orange-50 rounded-lg"
+                  >
+                    {sec.label}
+                    <motion.i 
+                      animate={{ rotate: openDropdown === sec.key ? 180 : 0 }}
+                      className="fa-solid fa-chevron-down text-sm"
+                    />
+                  </button>
+                  <AnimatePresence>
+                    {openDropdown === sec.key && dropdownMenu(sec.items, true)}
+                  </AnimatePresence>
+                </div>
+              ))}
+
+              <Link href="/contact" className="mt-4 mx-4 bg-gray-900 text-white text-center py-4 rounded-xl font-bold hover:bg-[#FF9933] transition-all" onClick={() => setIsOpen(false)}>
+                Contact Us
+              </Link>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }
