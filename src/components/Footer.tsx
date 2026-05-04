@@ -84,6 +84,7 @@ export default function Footer() {
                 ["About Us", "/about"],
                 ["Our Services", "/services"],
                 ["Careers", "/careers"],
+                ["Become A Partner", "/become-a-partner"],
                 ["Contact", "/contact"],
               ].map(([label, href]) => (
                 <li key={href}>

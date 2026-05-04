@@ -17,7 +17,7 @@ const productLinks = [
 
 const companyLinks = [
   { label: 'About MSquare', href: '/about' },
-  { label: 'Become A Partner', href: 'https://register.msquaresoftware.com/pages/comman-form/', external: true },
+  { label: 'Become A Partner', href: '/become-a-partner' },
   { label: 'Careers', href: '/careers' },
 ];
 
