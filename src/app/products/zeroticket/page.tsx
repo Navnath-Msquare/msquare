@@ -25,7 +25,7 @@ export default function ZeroTicketPage() {
       }
       productImage="/zero-tecket.png"
       visitLink="https://zero-ticket.com/"
-      themeColor="#F59E0B"
+      themeColor="#e78114"
     />
   );
 }

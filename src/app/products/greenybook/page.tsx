@@ -23,7 +23,7 @@ export default function GreenybookPage() {
       }
       productImage="/Images/greenybook-hero.png"
       visitLink="https://greenybook.com/"
-      themeColor="#10B981"
+      themeColor="#e78114"
     />
   );
 }

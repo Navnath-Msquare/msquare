@@ -29,7 +29,8 @@ export default function BankLndPage() {
       }
       productImage="/bank1.png"
       visitLink="https://banklnd.com/home"
-      themeColor="#4F46E5"
+      themeColor="#e78114ff"
     />
   );
 }
+

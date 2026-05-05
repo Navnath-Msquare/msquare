@@ -18,10 +18,10 @@ const baseProducts = [
   {
     id: "02",
     img: "/bharat.png",
-    name: "BharatKADSA",
+    name: "BharatkaDSA",
     desc: "Direct Selling Agents Management System",
     href: "https://bharatkadsa.com/",
-    cta: "Visit BharatKADSA",
+    cta: "Visit BharatkaDSA",
     color: "#EF4444", // Red
   },
   {
@@ -94,11 +94,11 @@ const clients = [
     bg: "#4a154b",
   },
   { src: "/Images/clients/greenybook.png", alt: "Greenybook" },
-  { src: "/Images/clients/1.png", alt: "Client 1" },
-  { src: "/Images/clients/2.png", alt: "Client 2" },
-  { src: "/Images/clients/3.png", alt: "Client 3" },
-  { src: "/Images/clients/4.png", alt: "Client 4" },
-  { src: "/Images/clients/5.png", alt: "Client 5" },
+  { src: "/Images/clients/1.png", alt: "Spees" },
+  { src: "/Images/clients/2.png", alt: "Krishna Chemists Ltd" },
+  { src: "/Images/clients/3.png", alt: "Saakshi" },
+  { src: "/Images/clients/4.png", alt: "Vikram" },
+  { src: "/Images/clients/5.png", alt: "Timo" },
   { src: "/Images/clients/6.png", alt: "Client 6" },
   { src: "/Images/clients/logo - Copy.png", alt: "BharatCapitAZ" },
 ];
@@ -243,7 +243,7 @@ export default function HomePage() {
                 </p>
               </div>
               <h2 className="text-5xl md:text-7xl font-black text-gray-900 tracking-tighter leading-none">
-                Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-blue-600 to-purple-600">Products</span>
+                Our <span className="text-orange-500">Products</span>
               </h2>
             </div>
           </motion.div>
@@ -297,11 +297,11 @@ export default function HomePage() {
                   >
                     {p.name}
                   </h3>
-                  <p className="text-gray-500 text-sm font-medium mb-8 leading-relaxed line-clamp-2">
+                  <p className="text-gray-500 text-sm font-medium mb-5 leading-relaxed line-clamp-2">
                     {p.desc}
                   </p>
 
-                  <div className="mt-auto pt-6 border-t border-gray-50 flex items-center justify-between">
+                  <div className="mt-auto pt-4 border-t border-gray-50 flex items-center justify-between">
                     <Link
                       href={p.href}
                       target="_blank"
@@ -544,9 +544,9 @@ export default function HomePage() {
                   <Image
                     src={c.src}
                     alt={c.alt}
-                    width={180}
-                    height={90}
-                    className="w-auto h-14 md:h-20 lg:h-24 object-contain"
+                    width={220}
+                    height={110}
+                    className="w-auto h-20 md:h-28 lg:h-36 object-contain"
                   />
                 </div>
               </motion.div>

@@ -37,7 +37,7 @@ const serviceCards = [
       desc: "Integrate intelligent technology with our IoT solutions to enhance operational efficiency...",
       items: [
         "BankLnd",
-        "BharatKADSA",
+        "BharatkaDSA",
         "GymCloudSuite",
         "Greenybook.com",
         "ZeroTicket.com",
@@ -243,16 +243,18 @@ export default function ServicesPage() {
                 </div>
 
                 {/* Default Visible Layer */}
-                <div className="absolute inset-x-8 bottom-8 z-20 flex flex-col transition-all duration-500 transform group-hover:opacity-0 group-hover:-translate-y-10">
-                  <div className="w-16 h-16 rounded-2xl bg-[#FF9933] text-white flex items-center justify-center text-3xl mb-6 shadow-lg">
+                <div className="absolute inset-x-8 bottom-8 z-20 flex items-center gap-6 transition-all duration-500 transform group-hover:opacity-0 group-hover:-translate-y-10">
+                  <div className="w-16 h-16 rounded-2xl bg-[#FF9933] text-white flex items-center justify-center text-3xl shadow-lg shrink-0 translate-y-1">
                     <i className={card.icon}></i>
                   </div>
-                  <h3 className="text-3xl font-bold text-white mb-3">
-                    {card.title}
-                  </h3>
-                  <p className="text-gray-300 leading-relaxed">
-                    {card.preview}
-                  </p>
+                  <div>
+                    <h3 className="text-2xl font-bold text-white mb-1">
+                      {card.title}
+                    </h3>
+                    <p className="text-gray-300 text-sm leading-tight line-clamp-2">
+                      {card.preview}
+                    </p>
+                  </div>
                 </div>
 
                 {/* Expanded Hover Layer */}

@@ -8,7 +8,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const productLinks = [
   { label: 'BankLnd', href: '/products/banklnd' },
-  { label: 'BharatKADSA', href: '/products/bharatkadsa' },
+  { label: 'BharatkaDSA', href: '/products/bharatkadsa' },
   { label: 'GymCloudSuite', href: '/products/gymcloudsuite' },
   { label: 'Greenybook', href: '/products/greenybook' },
   { label: 'ZeroTicket', href: '/products/zeroticket' },

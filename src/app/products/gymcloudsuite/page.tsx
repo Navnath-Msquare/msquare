@@ -30,7 +30,7 @@ export default function GymCloudSuitePage() {
       }
       productImage="/gym1.png"
       visitLink="https://gymcloudsuite.com/"
-      themeColor="#10B981"
+      themeColor="#e78114"
     />
   );
 }

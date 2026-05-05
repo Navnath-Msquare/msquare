@@ -28,7 +28,7 @@ export default function AutomateSchoolPage() {
       }
       productImage="/school1.png"
       visitLink="https://automatemyschool.com/"
-      themeColor="#8B5CF6"
+      themeColor="#e78114ff"
     />
   );
 }

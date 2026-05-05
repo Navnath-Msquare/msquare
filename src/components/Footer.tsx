@@ -108,7 +108,7 @@ export default function Footer() {
             <ul className="space-y-4">
               {[
                 ["BankLnD", "/products/banklnd"],
-                ["BharatKADSA", "/products/bharatkadsa"],
+                ["BharatkaDSA", "/products/bharatkadsa"],
                 ["GymCloudSuite", "/products/gymcloudsuite"],
                 ["ZeroTicket", "/products/zeroticket"],
                 ["AutomateMySchool", "/products/automateschool"],

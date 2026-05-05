@@ -11,7 +11,7 @@ export default function TrademarksPage() {
       </section>
       <section className="container mx-auto px-4 py-12 max-w-4xl">
         <h2 className="text-3xl font-bold mb-6">Trademarks</h2>
-        <p className="text-gray-600 leading-relaxed mb-4">MSquare Software and its product names, including BankLnD, BharatKADSA, GymCloudSuite, ZeroTicket, AutomateMySchool, and MagiXERP, are trademarks of MSquare Software Pvt. Ltd.</p>
+        <p className="text-gray-600 leading-relaxed mb-4">MSquare Software and its product names, including BankLnD, BharatkaDSA, GymCloudSuite, ZeroTicket, AutomateMySchool, and MagiXERP, are trademarks of MSquare Software Pvt. Ltd.</p>
         <p className="text-gray-600 leading-relaxed mb-4">These trademarks may not be used without the prior written permission of MSquare Software.</p>
         <p className="text-gray-600 leading-relaxed">
           For trademark inquiries:{' '}
