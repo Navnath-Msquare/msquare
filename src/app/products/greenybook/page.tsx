@@ -21,7 +21,7 @@ export default function GreenybookPage() {
           <p></p>
         </>
       }
-      productImage="/Images/clients/greenybook.png"
+      productImage="/Images/greenybook-hero.png"
       visitLink="https://greenybook.com/"
       themeColor="#10B981"
     />

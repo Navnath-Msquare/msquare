@@ -27,9 +27,9 @@ export default function BankLndPage() {
           </p>
         </>
       }
-      productImage="/Images/banklnd.png"
+      productImage="/bank1.png"
       visitLink="https://banklnd.com/home"
-      themeColor="#FF9933"
+      themeColor="#4F46E5"
     />
   );
 }

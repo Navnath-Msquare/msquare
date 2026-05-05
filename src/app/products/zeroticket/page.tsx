@@ -23,9 +23,9 @@ export default function ZeroTicketPage() {
           </p>
         </>
       }
-      productImage="/Images/zeroticket.jpg"
+      productImage="/zero-tecket.png"
       visitLink="https://zero-ticket.com/"
-      themeColor="#EF4444"
+      themeColor="#F59E0B"
     />
   );
 }

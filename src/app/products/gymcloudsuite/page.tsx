@@ -28,9 +28,9 @@ export default function GymCloudSuitePage() {
           </p>
         </>
       }
-      productImage="/Images/gymcloudesuit.png"
+      productImage="/gym1.png"
       visitLink="https://gymcloudsuite.com/"
-      themeColor="#A855F7"
+      themeColor="#10B981"
     />
   );
 }

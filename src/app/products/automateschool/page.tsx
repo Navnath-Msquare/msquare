@@ -26,9 +26,9 @@ export default function AutomateSchoolPage() {
           </p>
         </>
       }
-      productImage="/Images/automatemyschool.jpg"
+      productImage="/school1.png"
       visitLink="https://automatemyschool.com/"
-      themeColor="#EAB308"
+      themeColor="#8B5CF6"
     />
   );
 }
