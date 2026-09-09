@@ -101,7 +101,7 @@ export default function HomePage() {
         <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-white via-white/80 to-transparent pointer-events-none z-0" />
 
         {/* Text Content with Wait Transition to avoid overlap */}
-        <div className="container mx-auto px-6 lg:px-8 max-w-7xl relative z-20 flex-grow flex flex-col justify-center py-16 mt-8">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-20 flex-grow flex flex-col justify-center pt-24 sm:pt-28 md:pt-32 pb-14 md:pb-16">
           <AnimatePresence mode="wait">
             <motion.div
               key={`text-${currentSlide}`}
@@ -114,31 +114,31 @@ export default function HomePage() {
               <span className="text-[#FF9933] font-bold text-xs tracking-widest uppercase mb-3 block">
                 {heroSlides[currentSlide].tag}
               </span>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1a2b4c] leading-tight mb-5 tracking-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#1a2b4c] leading-tight mb-5 tracking-tight">
                 {heroSlides[currentSlide].title1} <br />
                 <span className="text-[#FF9933]">{heroSlides[currentSlide].title2}</span>
               </h1>
-              <p className="text-gray-700 text-lg md:text-xl font-medium mb-8 leading-relaxed max-w-xl">
+              <p className="text-gray-700 text-base sm:text-lg md:text-xl font-medium mb-8 leading-relaxed max-w-xl">
                 {heroSlides[currentSlide].desc}
               </p>
 
               {/* Supporting Keywords / Icons */}
-              <div className="flex flex-wrap items-center gap-6 md:gap-10 mb-10">
+              <div className="flex flex-wrap items-center gap-4 sm:gap-6 md:gap-10 mb-8 sm:mb-10">
                 {heroSlides[currentSlide].icons.map((item, idx) => (
-                  <div key={idx} className="flex flex-col items-center justify-center text-center max-w-[80px]">
-                    <div className="w-12 h-12 rounded-full border border-gray-200 bg-white shadow-sm flex items-center justify-center text-[#1a2b4c] text-lg mb-2">
+                  <div key={idx} className="flex flex-col items-center justify-center text-center max-w-[70px] sm:max-w-[80px]">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-gray-200 bg-white shadow-sm flex items-center justify-center text-[#1a2b4c] text-base sm:text-lg mb-2">
                       <i className={`fa-solid ${item.icon}`}></i>
                     </div>
-                    <span className="text-xs font-bold text-[#1a2b4c] leading-tight">{item.name}</span>
+                    <span className="text-[11px] sm:text-xs font-bold text-[#1a2b4c] leading-tight">{item.name}</span>
                   </div>
                 ))}
               </div>
 
-              <div className="flex flex-wrap items-center gap-4">
-                <Link href="/about" className="px-8 py-3.5 bg-[#FF9933] text-white rounded-full font-bold hover:bg-[#e68a2e] transition-colors shadow-lg flex items-center gap-2">
+              <div className="flex flex-wrap items-center gap-3 sm:gap-4">
+                <Link href="/about" className="px-6 sm:px-8 py-3 sm:py-3.5 bg-[#FF9933] text-white rounded-full font-bold text-sm sm:text-base hover:bg-[#e68a2e] transition-colors shadow-lg flex items-center justify-center gap-2 text-center">
                   {heroSlides[currentSlide].btn1} <i className="fa-solid fa-arrow-right"></i>
                 </Link>
-                <Link href="/contact" className="px-8 py-3.5 bg-white text-[#1a2b4c] border border-gray-200 rounded-full font-bold hover:bg-gray-50 transition-colors shadow-sm flex items-center gap-2">
+                <Link href="/contact" className="px-6 sm:px-8 py-3 sm:py-3.5 bg-white text-[#1a2b4c] border border-gray-200 rounded-full font-bold text-sm sm:text-base hover:bg-gray-50 transition-colors shadow-sm flex items-center justify-center gap-2 text-center">
                   {heroSlides[currentSlide].btn2} <i className="fa-solid fa-arrow-right"></i>
                 </Link>
               </div>

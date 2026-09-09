@@ -34,27 +34,44 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Close mobile menu on route change
+  useEffect(() => {
+    setIsOpen(false);
+    setExpandedMobile(null);
+  }, [pathname]);
+
+  // Auto-close mobile menu on desktop breakpoint resize
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1280) {
+        setIsOpen(false);
+      }
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const isActive = (href: string) => {
     if (href === '/') return pathname === '/';
     return pathname.startsWith(href);
   };
 
   const getLinkClass = (active: boolean) =>
-    `relative px-3 py-2 text-sm font-semibold transition-colors duration-300 whitespace-nowrap ${
+    `relative px-2.5 2xl:px-3 py-2 text-[13px] 2xl:text-sm font-semibold transition-colors duration-300 whitespace-nowrap ${
       active ? 'text-[#FF9933]' : 'text-gray-800 hover:text-[#FF9933]'
     }`;
 
   return (
-    <header className={`fixed w-full top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-md shadow-sm py-2' : 'bg-white py-4 shadow-sm'}`}>
+    <header className={`fixed w-full top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-md shadow-md py-2' : 'bg-white py-3 md:py-4 shadow-sm'}`}>
       <nav>
-        <div className="container mx-auto px-4 xl:px-8 max-w-[1400px] flex items-center justify-between">
-          <Link href="/" onClick={() => setIsOpen(false)} className="flex-shrink-0 mr-4">
+        <div className="container mx-auto px-4 sm:px-6 xl:px-8 max-w-[1440px] flex items-center justify-between">
+          <Link href="/" onClick={() => setIsOpen(false)} className="flex-shrink-0 mr-2 sm:mr-4">
             <Image src="/Images/new-txt-logo-removebg-preview.png" alt="MSquare Software" width={160} height={55}
-              style={{ maxHeight: '45px', width: 'auto', objectFit: 'contain' }} className="transition-transform hover:scale-105" />
+              style={{ maxHeight: '42px', width: 'auto', objectFit: 'contain' }} className="transition-transform hover:scale-105 h-8 sm:h-9 md:h-10" />
           </Link>
 
           {/* Desktop Links */}
-          <div className="hidden xl:flex items-center gap-1 xl:gap-4 flex-1 justify-center relative">
+          <div className="hidden xl:flex items-center gap-0.5 2xl:gap-2 flex-1 justify-center relative">
             {navLinks.map((link) => {
               if (link.label === 'Company') {
                 return (
@@ -172,9 +189,9 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white border-t border-gray-100 overflow-hidden shadow-lg"
+            className="xl:hidden bg-white border-t border-gray-100 shadow-2xl max-h-[calc(100vh-4.5rem)] overflow-y-auto"
           >
-            <div className="container mx-auto px-4 py-6 flex flex-col gap-2">
+            <div className="container mx-auto px-4 py-4 flex flex-col gap-1.5">
               {navLinks.map((link) => {
                 if (link.label === 'Company' || link.label === 'Solutions' || link.label === 'Products') {
                   const subLinks = link.label === 'Company' ? [
