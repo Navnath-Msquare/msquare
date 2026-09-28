@@ -66,7 +66,7 @@ export default function Navbar() {
       <nav>
         <div className="container mx-auto px-4 sm:px-6 xl:px-8 max-w-[1440px] flex items-center justify-between">
           <Link href="/" onClick={() => setIsOpen(false)} className="flex-shrink-0 mr-2 sm:mr-4">
-            <Image src="/Images/new-txt-logo-removebg-preview.png" alt="MSquare Software" width={160} height={55}
+            <Image src="/assets/MSquareFinallogo.png" alt="MSquare Software" width={160} height={55}
               style={{ maxHeight: '42px', width: 'auto', objectFit: 'contain' }} className="transition-transform hover:scale-105 h-8 sm:h-9 md:h-10" />
           </Link>
 

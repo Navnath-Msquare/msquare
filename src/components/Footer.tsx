@@ -39,7 +39,7 @@ export default function Footer() {
           <div className="lg:col-span-5">
             <div className="p-4 bg-white rounded-xl inline-block mb-6">
               <Image
-                src="/Images/new-txt-logo-removebg-preview.png"
+                src="/assets/MSquareFinallogo.png"
                 alt="MSquare Software"
                 width={200}
                 height={75}

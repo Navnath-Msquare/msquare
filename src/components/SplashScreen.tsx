@@ -47,13 +47,13 @@ export default function SplashScreen() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="flex flex-col items-center"
           >
-            <h1 className="text-3xl font-black mb-6 tracking-wide flex gap-2">
+            {/* <h1 className="text-3xl font-black mb-6 tracking-wide flex gap-2">
               <span className="text-[#FF9933]">MSquare</span>
               <span className="text-black">Software</span>
-            </h1>
+            </h1> */}
 
             <Image
-              src="/Images/new-txt-logo.jpg"
+              src="/assets/MSquareFinallogo.png"
               alt="MSquare Software Logo"
               width={280}
               height={100}

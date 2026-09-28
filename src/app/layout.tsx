@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   description:
     "MSquare Software delivers cutting-edge custom software solutions, SaaS platforms, and enterprise technology across Banking, Fitness, Education, and more.",
   icons: {
-    icon: "/msquarelogo.jpg",
+    icon: "/assets/MSquareFinallogo.png",
   },
 };
 export default function RootLayout({
