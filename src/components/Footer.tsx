@@ -1,5 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
+import Logo from "../../public/assets/MSquareFinallogo.png";
+
 
 export default function Footer() {
   return (
@@ -39,7 +41,7 @@ export default function Footer() {
           <div className="lg:col-span-5">
             <div className="p-4 bg-white rounded-xl inline-block mb-6">
               <Image
-                src="/assets/MSquareFinallogo.png"
+                src={Logo}
                 alt="MSquare Software"
                 width={200}
                 height={75}
