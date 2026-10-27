@@ -27,12 +27,12 @@ export default function CustomerSuccessPage() {
     <div className="min-h-screen bg-gray-50 pt-20">
       {/* 01. HERO SECTION */}
       <section className="relative min-h-[90vh] flex items-center bg-[#0a1121] overflow-hidden pt-20 lg:pt-0">
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0 overflow-hidden">
           <Image 
             src="/assets/CustomerSuccess_1.png"
             alt="Customer Success: Technology Proven in Real Operations."
             fill
-            className="object-cover object-right"
+            className="object-cover object-right blur-sm scale-105"
             priority
           />
           {/* Gradient overlay for better text readability */}
