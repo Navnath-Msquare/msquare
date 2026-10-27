@@ -36,7 +36,7 @@ const heroSlides = [
     title1: "Better Operations.",
     title2: "Better Employee Experiences.",
     desc: "From enterprise administration and learning to engagement and employee experiences, MSquare builds technology around how organizations and people actually work.",
-    bg: "/assets/HOMEPageBanner_02.png", 
+    bg: "/assets/HOMEPageBanner_02_clean.png", 
     icons: [
       { name: "Operations", icon: "fa-gear" },
       { name: "Learning", icon: "fa-graduation-cap" },
@@ -51,7 +51,7 @@ const heroSlides = [
     title1: "From Ground Reality",
     title2: "to Better Decisions.",
     desc: "Connect programs, field execution, information and leadership visibility through technology engineered for complex administrative environments.",
-    bg: "/assets/HOMEPageBanner_03.png", 
+    bg: "/assets/HOMEPageBanner_03_clean.png", 
     icons: [
       { name: "Governance", icon: "fa-landmark" },
       { name: "Field Programs", icon: "fa-users" },
@@ -96,9 +96,9 @@ export default function HomePage() {
           </motion.div>
         </AnimatePresence>
 
-        {/* Static overlays anchored to the section (not the cropped image) */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-transparent w-full md:w-3/4 lg:w-2/3 pointer-events-none z-0" />
-        <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-white via-white/80 to-transparent pointer-events-none z-0" />
+        {/* Static overlays to mask any baked-in background text cleanly */}
+        <div className="absolute inset-0 bg-gradient-to-r from-white via-white via-50% to-transparent w-full md:w-4/5 lg:w-3/4 pointer-events-none z-10" />
+        <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-white via-white/80 to-transparent pointer-events-none z-10" />
 
         {/* Text Content with Wait Transition to avoid overlap */}
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-20 flex-grow flex flex-col justify-center pt-24 sm:pt-28 md:pt-32 pb-14 md:pb-16">
