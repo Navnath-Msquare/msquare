@@ -36,7 +36,7 @@ export default function CustomerSuccessPage() {
             priority
           />
           {/* Gradient overlay for better text readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0a1121] via-[#0a1121]/60 to-transparent z-10 lg:w-3/4"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0a1121] via-[#0a1121]/90 to-transparent z-10 lg:w-3/4"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-[#0a1121] via-transparent to-transparent z-10 opacity-70"></div>
         </div>
 
@@ -51,10 +51,10 @@ export default function CustomerSuccessPage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
               Technology Proven<br />in Real Operations.
             </h1>
-            <p className="text-lg text-gray-300 mb-6 max-w-2xl leading-relaxed">
+            <p className="text-lg text-white/95 font-medium mb-6 max-w-2xl leading-relaxed drop-shadow-sm">
               From enterprises to government organizations, MSquare engineers technology that becomes part of how organizations operate, execute and make decisions.
             </p>
-            <p className="text-lg text-gray-300 mb-8 max-w-2xl leading-relaxed">
+            <p className="text-lg text-white/95 font-medium mb-8 max-w-2xl leading-relaxed drop-shadow-sm">
               Our customer relationships extend beyond implementation supporting platforms as organizations grow, processes evolve and new requirements emerge.
             </p>
           </motion.div>
