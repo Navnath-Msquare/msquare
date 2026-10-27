@@ -4,40 +4,19 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
-let hasShownSplash = false;
-
 export default function SplashScreen() {
-  const [showSplash, setShowSplash] = useState(false);
+  const [showSplash, setShowSplash] = useState(true);
 
   useEffect(() => {
-    // Check if splash was already shown in this session
-    try {
-      if (sessionStorage.getItem("msquare_splash_shown") || hasShownSplash) {
-        setShowSplash(false);
-        return;
-      }
-    } catch {
-      // In case sessionStorage is blocked
-    }
-
-    setShowSplash(true);
-
+    // Refresh किंवा नवीन पेज लोडवर स्प्लॅश स्क्रीन दिसेल
     const timer = setTimeout(() => {
-      hasShownSplash = true;
-      try {
-        sessionStorage.setItem("msquare_splash_shown", "true");
-      } catch {}
       setShowSplash(false);
-    }, 800);
+    }, 1200);
 
     return () => clearTimeout(timer);
   }, []);
 
   const handleDismiss = () => {
-    hasShownSplash = true;
-    try {
-      sessionStorage.setItem("msquare_splash_shown", "true");
-    } catch {}
     setShowSplash(false);
   };
 
