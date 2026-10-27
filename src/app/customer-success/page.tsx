@@ -32,7 +32,7 @@ export default function CustomerSuccessPage() {
             src="/assets/CustomerSuccess_1.png"
             alt="Customer Success: Technology Proven in Real Operations."
             fill
-            className="object-cover object-right blur-sm scale-105"
+            className="object-cover object-right blur-[1px]"
             priority
           />
           {/* Gradient overlay for better text readability */}
