@@ -1,17 +1,16 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
+import SplashScreen from "@/components/SplashScreen";
 
-const roboto = Roboto({
-  weight: ["300", "400", "500", "700"],
+const poppins = Poppins({
+  weight: ["300", "400", "500", "600", "700"],
   subsets: ["latin"],
   display: "swap",
 });
-
-import SplashScreen from "@/components/SplashScreen";
 
 export const metadata: Metadata = {
   title: "MSquare Software - Driving Business Innovation",
@@ -21,6 +20,7 @@ export const metadata: Metadata = {
     icon: "/assets/MSquareFinallogo.png",
   },
 };
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
@@ -35,13 +35,8 @@ export default function RootLayout({
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
         />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
       </head>
-      <body className="flex flex-col min-h-screen">
+      <body className={`${poppins.className} flex flex-col min-h-screen`}>
         <SplashScreen />
         <Navbar />
         <main className="flex-1">{children}</main>

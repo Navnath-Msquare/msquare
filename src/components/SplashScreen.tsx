@@ -7,29 +7,39 @@ import Image from "next/image";
 let hasShownSplash = false;
 
 export default function SplashScreen() {
-  // Splash नेहमी start ला दिसेल, पण जर आधी दाखवला असेल तर नाही
-  const [showSplash, setShowSplash] = useState(!hasShownSplash);
+  const [showSplash, setShowSplash] = useState(false);
 
   useEffect(() => {
-    if (hasShownSplash) return;
+    // Check if splash was already shown in this session
+    try {
+      if (sessionStorage.getItem("msquare_splash_shown") || hasShownSplash) {
+        setShowSplash(false);
+        return;
+      }
+    } catch {
+      // In case sessionStorage is blocked
+    }
 
-    // 2 sec नंतर splash hide
+    setShowSplash(true);
+
     const timer = setTimeout(() => {
       hasShownSplash = true;
+      try {
+        sessionStorage.setItem("msquare_splash_shown", "true");
+      } catch {}
       setShowSplash(false);
-    }, 2000);
+    }, 800);
 
     return () => clearTimeout(timer);
   }, []);
 
-  // Splash active असताना scroll बंद
-  useEffect(() => {
-    document.body.style.overflow = showSplash ? "hidden" : "unset";
-
-    return () => {
-      document.body.style.overflow = "unset";
-    };
-  }, [showSplash]);
+  const handleDismiss = () => {
+    hasShownSplash = true;
+    try {
+      sessionStorage.setItem("msquare_splash_shown", "true");
+    } catch {}
+    setShowSplash(false);
+  };
 
   return (
     <AnimatePresence>
@@ -37,9 +47,10 @@ export default function SplashScreen() {
         <motion.div
           key="splash"
           initial={{ opacity: 1 }}
-          exit={{ opacity: 0, scale: 1.1 }}
-          transition={{ duration: 0.8, ease: "easeInOut" }}
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-white"
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.35, ease: "easeInOut" }}
+          onClick={handleDismiss}
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-white cursor-pointer select-none"
         >
           <motion.div
             initial={{ scale: 0.8, opacity: 0, y: 20 }}
