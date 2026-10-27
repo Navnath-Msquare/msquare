@@ -460,7 +460,7 @@ export default function PhilosophyPage() {
                    </div>
                    <div className="flex items-center gap-3">
                      <i className="fa-solid fa-envelope text-gray-500 w-4"></i>
-                     <span>info@msquaresoftware.com</span>
+                     <span>Retesh.k@msquaresoftware.com</span>
                    </div>
                    <div className="flex items-center gap-3">
                      <i className="fa-solid fa-location-dot text-gray-500 w-4"></i>

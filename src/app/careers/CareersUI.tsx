@@ -168,13 +168,13 @@ export default function CareersUI({ jobs }: { jobs: Job[] }) {
               </div>
 
               <div className="space-y-6">
-                <a href="mailto:info@msquaresoftware.com" className="flex items-center gap-6 p-6 rounded-2xl bg-gray-50 border border-gray-100 hover:border-[#FF9933] hover:bg-white transition-all group">
+                <a href="mailto:Retesh.k@msquaresoftware.com" className="flex items-center gap-6 p-6 rounded-2xl bg-gray-50 border border-gray-100 hover:border-[#FF9933] hover:bg-white transition-all group">
                    <div className="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-[#FF9933] group-hover:scale-110 transition-transform">
                      <i className="fa-solid fa-envelope text-xl"></i>
                    </div>
                    <div className="text-left">
                      <p className="text-xs font-black text-gray-400 uppercase tracking-widest mb-1">Email</p>
-                     <p className="text-gray-900 font-bold">info@msquaresoftware.com</p>
+                     <p className="text-gray-900 font-bold">Retesh.k@msquaresoftware.com</p>
                    </div>
                 </a>
 

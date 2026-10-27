@@ -24,7 +24,7 @@ export default function TermsPage() {
         <h3 className="text-xl font-bold mb-3 mt-6 text-[#ff7f00]">Limitation of Liability</h3>
         <p className="text-gray-600 leading-relaxed">
           MSquare Software shall not be liable for any indirect, incidental, or consequential damages. Contact us at{' '}
-          <a href="mailto:info@msquaresoftware.com" className="text-[#FF9933] hover:underline">info@msquaresoftware.com</a>.
+          <a href="mailto:Retesh.k@msquaresoftware.com" className="text-[#FF9933] hover:underline">Retesh.k@msquaresoftware.com</a>.
         </p>
       </section>
     </>

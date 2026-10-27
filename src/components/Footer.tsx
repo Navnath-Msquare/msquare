@@ -157,7 +157,7 @@ export default function Footer() {
                 <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center flex-shrink-0 text-[#FF9933]">
                   <i className="fa-solid fa-envelope"></i>
                 </div>
-                <span className="text-sm">info@msquaresoftware.com</span>
+                <span className="text-sm">Retesh.k@msquaresoftware.com</span>
               </li>
             </ul>
           </div>

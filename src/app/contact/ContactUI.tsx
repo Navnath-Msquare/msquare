@@ -111,8 +111,8 @@ export default function ContactUI() {
               <p className="text-gray-600 leading-relaxed font-medium mb-4">
                 Mail your requirements and hear from us within 24 working hours.
               </p>
-              <a href="mailto:info@msquaresoftware.com" className="inline-flex items-center gap-2 text-lg font-bold text-[#FF9933] hover:text-[#e68a2e] transition-colors break-all">
-                 info@msquare.com <i className="fa-solid fa-arrow-right text-sm"></i>
+              <a href="mailto:Retesh.k@msquaresoftware.com" className="inline-flex items-center gap-1.5 text-sm sm:text-[15px] xl:text-base font-bold text-[#FF9933] hover:text-[#e68a2e] transition-colors whitespace-nowrap">
+                 <span>Retesh.k@msquaresoftware.com</span> <i className="fa-solid fa-arrow-right text-xs shrink-0"></i>
               </a>
             </motion.div>
           </motion.div>
@@ -140,7 +140,7 @@ export default function ContactUI() {
                     Please mail your requirements or software queries to us. Our dedicated consulting team will analyze your needs and provide a tailored digital roadmap.
                   </p>
                   
-                  <a href="mailto:info@msquaresoftware.com" 
+                  <a href="mailto:Retesh.k@msquaresoftware.com" 
                     className="inline-flex items-center gap-3 bg-gray-900 text-white font-bold py-4 px-8 rounded-full hover:bg-black transition-transform hover:scale-105 shadow-xl">
                     <i className="fa-regular fa-envelope"></i> Drop us a Line
                   </a>

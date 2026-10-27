@@ -162,7 +162,7 @@ export default function BecomeAPartnerPage() {
               <div className="space-y-4">
                 {/* Email Card */}
                 <a 
-                  href="mailto:info@msquaresoftware.com"
+                  href="mailto:Retesh.k@msquaresoftware.com"
                   className="flex items-center gap-4 p-4 rounded-2xl bg-gray-50 border border-transparent hover:border-orange-500 hover:bg-white transition-all group"
                 >
                   <div className="w-10 h-10 rounded-xl bg-white shadow-sm flex items-center justify-center text-orange-600 group-hover:bg-orange-600 group-hover:text-white transition-all">
@@ -170,7 +170,7 @@ export default function BecomeAPartnerPage() {
                   </div>
                   <div className="text-left">
                     <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Email Us</p>
-                    <p className="text-gray-900 font-bold text-sm break-all">info@msquaresoftware.com</p>
+                    <p className="text-gray-900 font-bold text-sm break-all">Retesh.k@msquaresoftware.com</p>
                   </div>
                 </a>
 

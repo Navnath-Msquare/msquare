@@ -22,7 +22,7 @@ export default function PrivacyPage() {
         <h3 className="text-xl font-bold mb-3 mt-6 text-[#ff7f00]">Contact Us</h3>
         <p className="text-gray-600 leading-relaxed">
           If you have any questions, please contact us at{' '}
-          <a href="mailto:info@msquaresoftware.com" className="text-[#FF9933] hover:underline">info@msquaresoftware.com</a>.
+          <a href="mailto:Retesh.k@msquaresoftware.com" className="text-[#FF9933] hover:underline">Retesh.k@msquaresoftware.com</a>.
         </p>
       </section>
     </>

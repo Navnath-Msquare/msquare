@@ -15,7 +15,7 @@ export default function TrademarksPage() {
         <p className="text-gray-600 leading-relaxed mb-4">These trademarks may not be used without the prior written permission of MSquare Software.</p>
         <p className="text-gray-600 leading-relaxed">
           For trademark inquiries:{' '}
-          <a href="mailto:info@msquaresoftware.com" className="text-[#FF9933] hover:underline">info@msquaresoftware.com</a>.
+          <a href="mailto:Retesh.k@msquaresoftware.com" className="text-[#FF9933] hover:underline">Retesh.k@msquaresoftware.com</a>.
         </p>
       </section>
     </>
